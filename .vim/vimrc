@@ -1,0 +1,74 @@
+" --------------
+" DDD VIM CONFIG
+" --------------
+
+set nocompatible
+filetype off
+syntax enable
+
+let $RTP=split(&runtimepath, ',')[0]
+let $RC="$HOME/.vim/vimrc"
+
+execute "set t_8f=\e[38;2;%lu;%lu;%lum"
+execute "set t_8b=\e[38;2;%lu;%lu;%lum"
+
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'Yggdroot/indentLine'
+Plugin 'VundleVim/Vundle.vim' 
+Plugin 'chriskempson/base16-vim'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'morhetz/gruvbox'
+Plugin 'wincent/terminus'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'preservim/nerdtree'
+
+call vundle#end()
+filetype plugin indent on
+
+set shiftwidth=2 tabstop=2 softtabstop=2 expandtab autoindent smartindent smarttab
+set colorcolumn=100
+highlight ColorColumn ctermbg=darkgray
+
+colorscheme base16-gruvbox-dark-medium
+
+set number
+set nowrap
+set nu
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set incsearch
+set relativenumber
+set cursorline
+set lazyredraw
+set hlsearch
+set virtualedit=onemore 
+
+set ignorecase
+set smartcase 
+
+set splitbelow
+set splitright
+
+" window navigation
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" window management
+nnoremap ws <C-w>s
+nnoremap wv <C-w>v
+nnoremap wc <C-w>c
+nnoremap wq <C-w>q
+map wQ :q!<CR>
+map wW :w<CR>
+
+
+" plugin specific 
+map <C-n> :NERDTreeToggle<CR>
+

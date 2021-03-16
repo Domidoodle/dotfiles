@@ -24,6 +24,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'wincent/terminus'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'preservim/nerdtree'
+Plugin 'lervag/vimtex', {'tex_flavor': 'latex', 'vimtex_view_method': 'zathura', 'vimtex_quickfix_mode': 0, 'conceallevel': 1, 'tex_conceal': 'abdmg'}
 
 call vundle#end()
 filetype plugin indent on
@@ -59,15 +60,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-
-" window management
-nnoremap ws <C-w>s
-nnoremap wv <C-w>v
-nnoremap wc <C-w>c
-nnoremap wq <C-w>q
-map wQ :q!<CR>
-map wW :w<CR>
-
 
 " plugin specific 
 map <C-n> :NERDTreeToggle<CR>

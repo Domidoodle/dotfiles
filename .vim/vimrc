@@ -13,6 +13,7 @@ let $RC="$HOME/.vim/vimrc"
 execute "set t_8f=\e[38;2;%lu;%lu;%lum"
 execute "set t_8b=\e[38;2;%lu;%lu;%lum"
 
+set ff=unix
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -62,6 +63,16 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+
+" semicolon line ender
+inoremap <C-l> <Esc>$a;
+nnoremap <C-l> $a;<Esc>
+
+" IT MUST BE TAUGHT
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 " plugin specific 
 map <C-n> :NERDTreeToggle<CR>

@@ -3,6 +3,7 @@
 " --------------
 
 set nocompatible
+set encoding=utf8
 filetype off
 syntax enable
 
@@ -12,6 +13,7 @@ let $RC="$HOME/.vim/vimrc"
 execute "set t_8f=\e[38;2;%lu;%lu;%lum"
 execute "set t_8b=\e[38;2;%lu;%lu;%lum"
 
+set ff=unix
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -24,6 +26,8 @@ Plugin 'morhetz/gruvbox'
 Plugin 'wincent/terminus'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'preservim/nerdtree'
+Plugin 'lervag/vimtex', {'tex_flavor': 'latex', 'vimtex_view_method': 'zathura', 'vimtex_quickfix_mode': 0, 'conceallevel': 1, 'tex_conceal': 'abdmg'}
+Plugin 'sirver/ultisnips'
 
 call vundle#end()
 filetype plugin indent on
@@ -60,14 +64,15 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" window management
-nnoremap ws <C-w>s
-nnoremap wv <C-w>v
-nnoremap wc <C-w>c
-nnoremap wq <C-w>q
-map wQ :q!<CR>
-map wW :w<CR>
+" semicolon line ender
+inoremap <C-l> <Esc>$a;
+nnoremap <C-l> $a;<Esc>
 
+" IT MUST BE TAUGHT
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 " plugin specific 
 map <C-n> :NERDTreeToggle<CR>

@@ -2,6 +2,7 @@
 " DDD VIM CONFIG
 " --------------
 
+set clipboard=unnamedplus
 set nocompatible
 set encoding=utf8
 filetype off
@@ -21,12 +22,11 @@ call vundle#begin()
 Plugin 'Yggdroot/indentLine'
 Plugin 'VundleVim/Vundle.vim' 
 Plugin 'chriskempson/base16-vim'
-Plugin 'sheerun/vim-polyglot'
+"Plugin 'sheerun/vim-polyglot'
 Plugin 'morhetz/gruvbox'
 Plugin 'wincent/terminus'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'preservim/nerdtree'
-Plugin 'lervag/vimtex', {'tex_flavor': 'latex', 'vimtex_view_method': 'zathura', 'vimtex_quickfix_mode': 0, 'conceallevel': 1, 'tex_conceal': 'abdmg'}
 Plugin 'sirver/ultisnips'
 
 call vundle#end()
@@ -58,15 +58,23 @@ set smartcase
 set splitbelow
 set splitright
 
+set noexpandtab
+
 " window navigation
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+" buffers
+nnoremap <F5> :buffers<CR>:buffer<Space>
+
 " semicolon line ender
 inoremap <C-l> <Esc>$a;
 nnoremap <C-l> $a;<Esc>
+
+" copy entire file to clipboard
+nnoremap <S-y> :%y+<CR>
 
 " IT MUST BE TAUGHT
 noremap <Up> <Nop>
@@ -77,3 +85,5 @@ noremap <Right> <Nop>
 " plugin specific 
 map <C-n> :NERDTreeToggle<CR>
 
+" compiling
+nnoremap <F4> :!pandoc %:p -r org -w pdf -o output.pdf<CR>

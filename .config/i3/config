@@ -194,8 +194,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # bar
-exec python ~/devel/dzen/panel2.py
-
+exec python ~/.scripts/bar.py
 # brightness
 bindsym $mod+comma exec "echo $(($(cat /sys/class/backlight/intel_backlight/brightness)-10)) > /sys/class/backlight/intel_backlight/brightness"
 bindsym $mod+period exec "echo $(($(cat /sys/class/backlight/intel_backlight/brightness)+10)) > /sys/class/backlight/intel_backlight/brightness"

@@ -7,7 +7,7 @@
 
 # Environment Variables
 export EDITOR=vim
-export PAGER=vimpager
+export JAVA_HOME="/usr/lib/jvm/java-18-openjdk"
 
 # power managment
 alias slx='systemctl suspend'
@@ -20,6 +20,7 @@ alias rm='rm -i'
 alias cls='clear'
 alias vimp='vimpager'
 alias clipboard='xclip -sel c'
+alias redshift='redshift -l 36:174'
 
 # laptop
 alias brightness='doas vim /sys/class/backlight/intel_backlight/brightness'
@@ -29,8 +30,8 @@ alias colours8='(x=`tput op` y=`printf %76s`;for i in {0..256};do o=00$i;echo -e
 ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;done)'
 
 # art stuff
-alias vibe='cat /home/domidoodle/Art/ansi-art/brycewave.ans'
-alias washere='cat /home/domidoodle/Art/ansi-art/domihere.ans'
+alias vibe='cat ~/Art/ansi-art/brycewave.ans'
+alias washere='cat ~/Art/ansi-art/domihere.ans'
 
 # dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -41,5 +42,13 @@ alias math='qalc'
 # aliases
 alias matlab='matlab -nodesktop -nosplash'
 
+# programming
+alias gcc='gcc -Wall'
+alias ssh-it='eval "$(ssh-agent -s)"'
+
 # Other
 PS1='\W \$ '
+
+# path
+export PATH=$PATH:~/.emacs.d/bin
+export PATH=$PATH:~/.local/bin

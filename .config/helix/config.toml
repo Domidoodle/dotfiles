@@ -1,0 +1,41 @@
+theme = "base16-gruvbox-dark-medium"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor]
+rulers = [80, 100]
+cursorline = true
+cursorcolumn = true
+gutters = ["diagnostics", "line-numbers", "spacer"]
+bufferline = "multiple"
+
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+'<' = '>'
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "file-modification-indicator"]
+right = ["workspace-diagnostics", "file-type", "position"]
+
+[editor.indent-guides]
+render = true
+skip-levels = 1
+character = "┊" 
+
+[keys.normal]
+K = "half_page_up"
+J = "half_page_down"
+H = ":buffer-previous"
+L = ":buffer-next"
+C-h = "jump_view_left"
+C-j = "jump_view_down"
+C-k = "jump_view_up"
+C-l = "jump_view_right"
+

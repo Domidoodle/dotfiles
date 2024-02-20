@@ -5,9 +5,12 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+alias hx='helix'
+
 # Environment Variables
-export EDITOR=vim
-export JAVA_HOME="/usr/lib/jvm/java-18-openjdk"
+export EDITOR=helix
+export JAVA_HOME="/usr/lib/jvm/java-19-openjdk"
+
 
 # power managment
 alias slx='systemctl suspend'
@@ -52,3 +55,8 @@ PS1='\W \$ '
 # path
 export PATH=$PATH:~/.emacs.d/bin
 export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.cargo/bin
+
+export QSYS_ROOTDIR="/home/kdddl/.cache/yay/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/21.1/quartus/sopc_builder/bin"
+
+alias capslockfix="xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'"

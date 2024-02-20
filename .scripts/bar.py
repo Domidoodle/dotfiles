@@ -126,9 +126,15 @@ def main():
             columns = line.split(" ");
             display = [];
             display.append(columns[0]);
-            display.append(columns[2].replace("x", "+").split("+"));
+            if "primary" in line:
+                display.append(columns[3].replace("x", "+").split("+"));
+            else:
+                display.append(columns[2].replace("x", "+").split("+"));
             displays.append(display);
 
+    print(displays);
+
+    displayData = [0, 1920]
     for display in displays:
         instances = [];
         instances.append(subprocess.Popen(["lemonbar", "-p", "-g", "{}x{}+{}+{}".format(display[1][0], 15, display[1][2], 0),
@@ -137,7 +143,6 @@ def main():
                                 ], text=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE));
         display.append(instances);
 
-    print(displays);
 
     # don't think there is anyway for a workspace to be focused and not visible
     workspaceStates = [" {workspace} ", # none 

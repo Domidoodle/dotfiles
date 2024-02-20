@@ -28,6 +28,9 @@ Plugin 'wincent/terminus'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'preservim/nerdtree'
 Plugin 'sirver/ultisnips'
+Plugin 'normen/vim-pio'
+Plugin 'MaskRay/ccls'
+Plugin 'prabirshrestha/vim-lsp'
 
 call vundle#end()
 filetype plugin indent on
@@ -46,11 +49,13 @@ set nobackup
 set undodir=~/.vim/undodir
 set undofile
 set incsearch
-set relativenumber
 set cursorline
+set cursorcolumn
 set lazyredraw
 set hlsearch
 set virtualedit=onemore 
+"set list
+"set listchars=tab:\¦\ 
 
 set ignorecase
 set smartcase 
@@ -67,11 +72,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " buffers
-nnoremap <F5> :buffers<CR>:buffer<Space>
-
-" semicolon line ender
-inoremap <C-l> <Esc>$a;
-nnoremap <C-l> $a;<Esc>
+nnoremap <C-q> :buffers<CR>:buffer<Space>
 
 " copy entire file to clipboard
 nnoremap <S-y> :%y+<CR>
@@ -84,6 +85,9 @@ noremap <Right> <Nop>
 
 " plugin specific 
 map <C-n> :NERDTreeToggle<CR>
+
+" wgsl
+autocmd BufNewFile,BufRead *.wgsl set syntax=rust
 
 " compiling
 nnoremap <F4> :!pandoc %:p -r org -w pdf -o output.pdf<CR>

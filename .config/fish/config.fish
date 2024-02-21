@@ -16,7 +16,7 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # programming
 alias gcc='gcc -Wall'
-alias ssh-it='eval "$(ssh-agent -s)"'
+alias ssh-it='eval "$(ssh-agent -c)"'
 alias matlab='matlab -nodesktop -nosplash'
 alias capslockfix="xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'"
 

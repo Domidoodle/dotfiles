@@ -11,7 +11,6 @@ alias hx='helix'
 export EDITOR=helix
 export JAVA_HOME="/usr/lib/jvm/java-19-openjdk"
 
-
 # power managment
 alias slx='systemctl suspend'
 alias shd='shutdown now'

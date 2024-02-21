@@ -1,6 +1,6 @@
-set EDITOR "helix"
-set TERM "alacritty"
-set JAVA_HOME "/usr/lib/jvm/java-19-openjdk"
+set -x EDITOR "helix"
+set -x TERM "alacritty"
+set -x JAVA_HOME "/usr/lib/jvm/java-19-openjdk"
 
 
 # util

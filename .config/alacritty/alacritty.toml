@@ -35,7 +35,7 @@ foreground = "0xd5c4a1"
 TERM = "alacritty"
 
 [font]
-size = 12
+size = 10
 
 [font.bold]
 family = "Ubuntu Mono"

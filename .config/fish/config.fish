@@ -23,6 +23,13 @@ alias capslockfix="xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'"
 # text editor
 alias hx='helix'
 
+function typstc 
+    # echo 'typst compile --root . $argv.typ $argv.pdf'
+    command typst compile --root . $argv.typ $argv.pdf
+    command zathura $argv.pdf &
+    command typst watch --root . $argv.typ $argv.pdf
+end
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
 
